@@ -29,9 +29,9 @@ public class Hit : MonoBehaviour
             clicks++;
             force += 2;
 
-            if (Mathf.Approximately(force % 20f, 0f))
+            if (Mathf.Approximately(force % 20f, 0f)) //Incrementa cada 20
             {
-                force += 10f;
+                force += 10f; 
             }
         }
     }
