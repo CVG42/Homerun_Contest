@@ -21,7 +21,7 @@ public class Hit : MonoBehaviour
         if(!didOnce)
         {
             didOnce = true;
-            Invoke("Launch", 5f);
+            Invoke("Launch", 15f);
         }
 
         if(canClick && Input.GetKeyDown(KeyCode.Space))
