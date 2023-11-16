@@ -7,7 +7,7 @@ public class Hit : MonoBehaviour
     private Rigidbody rb;
     public Transform launchDirection;
     [SerializeField] private int clicks = 0;
-    public float force = 50f;
+    public float force = 0f;
     private bool canClick = true;
     private bool didOnce = false;
 
@@ -21,12 +21,18 @@ public class Hit : MonoBehaviour
         if(!didOnce)
         {
             didOnce = true;
-            Invoke("Launch", 15f);
+            Invoke("Launch", 10f);
         }
 
         if(canClick && Input.GetKeyDown(KeyCode.Space))
         {
             clicks++;
+            force += 2;
+
+            if (Mathf.Approximately(force % 20f, 0f))
+            {
+                force += 10f;
+            }
         }
     }
 

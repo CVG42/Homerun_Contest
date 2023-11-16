@@ -503,7 +503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchDirection: {fileID: 1165130417}
   clicks: 0
-  force: 50
+  force: 0
 --- !u!1 &1768862339
 GameObject:
   m_ObjectHideFlags: 0
