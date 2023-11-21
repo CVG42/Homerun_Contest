@@ -5,7 +5,8 @@ using UnityEngine;
 public class Hit : MonoBehaviour
 {
     private Rigidbody rb;
-    public Transform launchDirection;
+    //public Transform launchDirection;
+    public GameObject arrow;
     [SerializeField] private int clicks = 0;
     public float force = 0f;
     private bool canClick = true;
@@ -38,7 +39,8 @@ public class Hit : MonoBehaviour
 
     void Launch()
     {
-        rb.AddForce(launchDirection.up * (force * clicks));
+        arrow.SetActive(true);
+        //rb.AddForce(launchDirection.up * (force * clicks));
         canClick = false;
     }
 }
