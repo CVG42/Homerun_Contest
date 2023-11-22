@@ -9,13 +9,13 @@ public class MagnusController : MonoBehaviour
     public float fillSpeed = 0.1f;
     private float maxCoefficient = 8;
     private float currentCoefficient;
-    //private bool isIncreasing;
+    private bool isIncreasing;
     private bool magnusBarOn;
 
     void Start()
     {
         currentCoefficient = maxCoefficient;
-        //isIncreasing = false;
+        isIncreasing = false;
         magnusBarOn = true;
         StartCoroutine(MagnusFill());
     }
@@ -24,7 +24,25 @@ public class MagnusController : MonoBehaviour
     {
         while(magnusBarOn == true)
         {
-            currentCoefficient -= fillSpeed;
+            if(!isIncreasing)
+            {
+                currentCoefficient -= fillSpeed;
+                if(currentCoefficient <= 0)
+                {
+                    isIncreasing = true;
+                }
+            }
+
+            if(isIncreasing)
+            {
+                currentCoefficient += fillSpeed;
+                if(currentCoefficient >= maxCoefficient)
+                {
+                    isIncreasing = false;
+                }
+            }
+
+            //currentCoefficient -= fillSpeed;
             float fill = currentCoefficient / maxCoefficient;
             magnusBar.fillAmount = fill;
             yield return new WaitForSeconds(0.02f);
@@ -32,9 +50,8 @@ public class MagnusController : MonoBehaviour
         yield return null;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StopRightBar()
     {
-        
+        magnusBarOn = false;
     }
 }
