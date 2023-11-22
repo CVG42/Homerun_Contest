@@ -8,6 +8,10 @@ public class Hit : MonoBehaviour
     public Transform launchDirection;
     public GameObject arrow;
     public MagnusController barController;
+
+    [SerializeField] private Vector3 velocity = Vector3.zero;
+    [SerializeField] private Vector3 angularVelocity = Vector3.zero;
+
     public int clicks = 0;
     public float force = 0f;
     private bool canClick = true;
@@ -16,6 +20,8 @@ public class Hit : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.velocity = velocity;
+        rb.angularVelocity = angularVelocity;
     }
 
     void Update()
@@ -37,11 +43,15 @@ public class Hit : MonoBehaviour
             }
         }
 
+
+    }
+
+    private void FixedUpdate()
+    {
         if(!barController.magnusBarOn)
         {
             LaunchBall();
-        }
-
+        }    
     }
 
     void Launch()
@@ -53,6 +63,11 @@ public class Hit : MonoBehaviour
 
     void LaunchBall()
     {
-        rb.AddForce(launchDirection.up * (force * clicks));
+        rb.AddForce(CalculateMagnusForce() + launchDirection.up * (force * clicks));
+    }
+
+    public Vector3 CalculateMagnusForce()
+    {
+        return barController.currentCoefficient * Vector3.Cross(rb.angularVelocity, rb.velocity);
     }
 }

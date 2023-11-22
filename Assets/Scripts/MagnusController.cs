@@ -8,15 +8,15 @@ public class MagnusController : MonoBehaviour
     public Image magnusBar;
     public Hit launch;
     public float fillSpeed = 0.1f;
-    private float maxCoefficient = 8;
-    private float currentCoefficient;
+    private float maxCoefficient = 8f;
+    public float currentCoefficient;
     private bool isIncreasing;
     public bool magnusBarOn;
 
     void Start()
     {
         launch = GetComponent<Hit>();
-        currentCoefficient = maxCoefficient;
+        currentCoefficient = 0;
         isIncreasing = false;
         magnusBarOn = true;
         StartCoroutine(MagnusFill());

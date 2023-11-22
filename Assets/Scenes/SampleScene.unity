@@ -223,6 +223,7 @@ MonoBehaviour:
   magnusBar: {fileID: 746840283}
   launch: {fileID: 1217520596}
   fillSpeed: 0.1
+  currentCoefficient: 0
   magnusBarOn: 0
 --- !u!4 &499806170
 Transform:
@@ -708,7 +709,7 @@ Rigidbody:
   m_GameObject: {fileID: 1217520590}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -828,6 +829,8 @@ MonoBehaviour:
   launchDirection: {fileID: 1165130417}
   arrow: {fileID: 1165130416}
   barController: {fileID: 499806169}
+  velocity: {x: 0, y: 0, z: 0}
+  angularVelocity: {x: 0, y: -10, z: 0}
   clicks: 0
   force: 0
 --- !u!1 &1370016734
