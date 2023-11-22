@@ -221,7 +221,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magnusBar: {fileID: 746840283}
+  launch: {fileID: 1217520596}
   fillSpeed: 0.1
+  magnusBarOn: 0
 --- !u!4 &499806170
 Transform:
   m_ObjectHideFlags: 0
@@ -822,7 +824,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af002a28fa8fc674181f1c1007d19f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 1217520591}
+  launchDirection: {fileID: 1165130417}
   arrow: {fileID: 1165130416}
+  barController: {fileID: 499806169}
   clicks: 0
   force: 0
 --- !u!1 &1370016734

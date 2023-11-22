@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public class MagnusController : MonoBehaviour
 {
     public Image magnusBar;
+    public Hit launch;
     public float fillSpeed = 0.1f;
     private float maxCoefficient = 8;
     private float currentCoefficient;
     private bool isIncreasing;
-    private bool magnusBarOn;
+    public bool magnusBarOn;
 
     void Start()
     {
+        launch = GetComponent<Hit>();
         currentCoefficient = maxCoefficient;
         isIncreasing = false;
         magnusBarOn = true;

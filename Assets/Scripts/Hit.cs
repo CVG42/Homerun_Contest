@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Hit : MonoBehaviour
 {
-    private Rigidbody rb;
-    //public Transform launchDirection;
+    public Rigidbody rb;
+    public Transform launchDirection;
     public GameObject arrow;
-    [SerializeField] private int clicks = 0;
+    public MagnusController barController;
+    public int clicks = 0;
     public float force = 0f;
     private bool canClick = true;
     private bool didOnce = false;
@@ -35,6 +36,12 @@ public class Hit : MonoBehaviour
                 force += 10f; 
             }
         }
+
+        if(!barController.magnusBarOn)
+        {
+            LaunchBall();
+        }
+
     }
 
     void Launch()
@@ -42,5 +49,10 @@ public class Hit : MonoBehaviour
         arrow.SetActive(true);
         //rb.AddForce(launchDirection.up * (force * clicks));
         canClick = false;
+    }
+
+    void LaunchBall()
+    {
+        rb.AddForce(launchDirection.up * (force * clicks));
     }
 }
