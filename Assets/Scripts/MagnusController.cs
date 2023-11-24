@@ -7,8 +7,8 @@ public class MagnusController : MonoBehaviour
 {
     public Image magnusBar;
     public Hit launch;
-    public float fillSpeed = 0.1f;
-    private float maxCoefficient = 8f;
+    public float fillSpeed = 0.05f;
+    private float maxCoefficient = 1.5f;
     public float currentCoefficient;
     private bool isIncreasing;
     public bool magnusBarOn;

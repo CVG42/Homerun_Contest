@@ -709,7 +709,7 @@ Rigidbody:
   m_GameObject: {fileID: 1217520590}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 2
+  m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -829,10 +829,9 @@ MonoBehaviour:
   launchDirection: {fileID: 1165130417}
   arrow: {fileID: 1165130416}
   barController: {fileID: 499806169}
-  velocity: {x: 0, y: 0, z: 0}
-  angularVelocity: {x: 0, y: -10, z: 0}
   clicks: 0
   force: 0
+  isTouchingGround: 0
 --- !u!1 &1370016734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1037,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768862339}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4ffa30a3f5f0da14bbe97f1389aecc6a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1112,8 +1111,8 @@ Transform:
   m_GameObject: {fileID: 1768862339}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 86899.7, y: 0, z: 0}
+  m_LocalScale: {x: 17380.947, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
