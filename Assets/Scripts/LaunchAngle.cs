@@ -7,6 +7,7 @@ public class LaunchAngle : MonoBehaviour
     public float rotationSpeed = 50f;
     private bool isRotating = true;
     public GameObject magnusBar;
+    public GameObject leftMagnusBar;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class LaunchAngle : MonoBehaviour
           
             isRotating = false;
             magnusBar.SetActive(true);
+            leftMagnusBar.SetActive(true);
         }
     }
 

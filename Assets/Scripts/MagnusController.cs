@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MagnusController : MonoBehaviour
 {
     public Image magnusBar;
+    public Image leftMagnusBar;
     public Hit launch;
     public float fillSpeed = 0.05f;
     private float maxCoefficient = 1.5f;
@@ -47,6 +48,7 @@ public class MagnusController : MonoBehaviour
             //currentCoefficient -= fillSpeed;
             float fill = currentCoefficient / maxCoefficient;
             magnusBar.fillAmount = fill;
+            leftMagnusBar.fillAmount = fill;
             yield return new WaitForSeconds(0.02f);
         }
         yield return null;
