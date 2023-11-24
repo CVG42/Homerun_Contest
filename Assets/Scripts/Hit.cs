@@ -47,6 +47,10 @@ public class Hit : MonoBehaviour
 
         if(!barController.magnusBarOn)
         {
+            /*
+            Vector3 magnusDirection = Vector3.Cross(rb.velocity, Vector3.up).normalized;
+            rb.AddForce(magnusDirection * 4 * Time.deltaTime);*/
+
             //LaunchBall();
             rb.AddForce(launchDirection.up * (force * clicks) * Time.deltaTime);
 
@@ -56,7 +60,8 @@ public class Hit : MonoBehaviour
                 Invoke("StopOnGround", 5f);
             }
 
-            if(transform.position.y >= 10f)
+            
+            if(transform.position.y >= 100f)
             {
                 rb.AddForce(Vector3.down * Physics.gravity.magnitude, ForceMode.Acceleration);
             }
