@@ -8,8 +8,9 @@ public class MagnusController : MonoBehaviour
     public Image magnusBar;
     public Image leftMagnusBar;
     public Hit launch;
-    public float fillSpeed = 0.05f;
-    private float maxCoefficient = 1.5f;
+    public GameObject text;
+    public float fillSpeed = 0.01f;
+    private float maxCoefficient = 4f;
     public float currentCoefficient;
     private bool isIncreasing;
     public bool magnusBarOn;
@@ -57,5 +58,13 @@ public class MagnusController : MonoBehaviour
     public void StopRightBar()
     {
         magnusBarOn = false;
+        text.SetActive(true);
+    }
+
+    public void StopLeftBar()
+    {
+        magnusBarOn = false;
+        currentCoefficient *= -1f;
+        text.SetActive(true);
     }
 }

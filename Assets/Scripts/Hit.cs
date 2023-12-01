@@ -44,34 +44,40 @@ public class Hit : MonoBehaviour
                 force += 10f; 
             }
         }
+    }
+    
+    private void FixedUpdate()
+    {
+        //Magnus();
 
         if(!barController.magnusBarOn)
         {
             /*
             Vector3 magnusDirection = Vector3.Cross(rb.velocity, Vector3.up).normalized;
             rb.AddForce(magnusDirection * 4 * Time.deltaTime);*/
+            float launchAngle = 45f;
+
+            // Convert the angle to radians
+            float launchAngleRadians = launchAngle * Mathf.Deg2Rad;
+
+            // Calculate the launch direction using trigonometry
+            float launchDirectionX = Mathf.Sin(launchAngleRadians);
+            float launchDirectionZ = Mathf.Tan(launchAngleRadians);
+
+            // Apply force with the calculated launch direction
+            rb.AddForce(new Vector3(0f, launchDirectionZ, 0f) * force * Time.fixedDeltaTime, ForceMode.Impulse);
 
             //LaunchBall();
-            rb.AddForce(launchDirection.up * (force * clicks) * Time.deltaTime);
 
-            
-            if(isTouchingGround)
+            //rb.AddForce(launchDirection.up * (force * clicks) * Time.fixedDeltaTime);
+
+
+            if (isTouchingGround)
             {
                 Invoke("StopOnGround", 5f);
             }
-
-            
-            if(transform.position.y >= 100f)
-            {
-                rb.AddForce(Vector3.down * Physics.gravity.magnitude, ForceMode.Acceleration);
-            }
         }    
     }
-    /*
-    private void FixedUpdate()
-    {
-        Magnus();
-    }*/
 
     void Launch()
     {

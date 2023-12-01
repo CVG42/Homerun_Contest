@@ -32,7 +32,7 @@ public class LaunchAngle : MonoBehaviour
 
     void GetAngle()
     {
-        float angle = Mathf.Sin(Time.time) * 52.5f - 47.5f;
+        float angle = Mathf.Sin(Time.time) * 22.5f - 67.5f;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
