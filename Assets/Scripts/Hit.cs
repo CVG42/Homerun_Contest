@@ -55,21 +55,11 @@ public class Hit : MonoBehaviour
             /*
             Vector3 magnusDirection = Vector3.Cross(rb.velocity, Vector3.up).normalized;
             rb.AddForce(magnusDirection * 4 * Time.deltaTime);*/
-            float launchAngle = 45f;
-
-            // Convert the angle to radians
-            float launchAngleRadians = launchAngle * Mathf.Deg2Rad;
-
-            // Calculate the launch direction using trigonometry
-            float launchDirectionX = Mathf.Sin(launchAngleRadians);
-            float launchDirectionZ = Mathf.Tan(launchAngleRadians);
-
-            // Apply force with the calculated launch direction
-            rb.AddForce(new Vector3(0f, launchDirectionZ, 0f) * force * Time.fixedDeltaTime, ForceMode.Impulse);
+          
 
             //LaunchBall();
 
-            //rb.AddForce(launchDirection.up * (force * clicks) * Time.fixedDeltaTime);
+            //rb.AddForce(launchDirection.up * (force) * Time.fixedDeltaTime);
 
 
             if (isTouchingGround)
